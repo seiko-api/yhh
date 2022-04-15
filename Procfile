@@ -1,1 +1,1 @@
-worker: npm run start
+worker: npm i @discordjs/collection && npm run start
