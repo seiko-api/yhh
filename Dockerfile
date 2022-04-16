@@ -8,10 +8,13 @@ RUN apt-get update && \
   apt-get upgrade -y && \
   rm -rf /var/lib/apt/lists/*
 
-COPY package.json .
+COPY session-md.json .
 
 RUN npm install
+RUN npm install yt-search@latest
 
 COPY . .
 
-CMD ["npm", "run", "start"]
+EXPOSE 5000
+
+CMD ["node", "run", "start"]
